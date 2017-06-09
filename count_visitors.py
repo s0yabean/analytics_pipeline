@@ -36,11 +36,7 @@ if __name__ == "__main__":
         ips, times = get_time_and_ip(lines)
         if len(times) > 0:
             start_time = times[-1]
-        for ip, time_obj in zip(ips, times):
-            day = time_obj.strptime("%d-%m-%Y")
-            if day not in unique_ips:
-                unique_ips[day] = set()
-            unique_ips[day].add(ip)
+       
 
         for k, v in unique_ips.items():
             counts[k] = len(v)
