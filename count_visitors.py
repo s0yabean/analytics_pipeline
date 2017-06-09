@@ -37,7 +37,7 @@ if __name__ == "__main__":
         if len(times) > 0:
             start_time = times[-1]
         for ip, time_obj in zip(ips, times):
-            day = time_obj.strftime("%d-%m-%Y")
+            day = time_obj.strptime("%d-%m-%Y")
             if day not in unique_ips:
                 unique_ips[day] = set()
             unique_ips[day].add(ip)
